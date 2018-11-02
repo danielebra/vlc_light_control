@@ -5,6 +5,9 @@ import requests
 from xml.dom import minidom
 
 class VLCTracker(object):
+    STATE_STOPPED = 'stopped'
+    STATE_PLAYING = 'playing'
+    STATE_PAUSED = 'paused'
     def __init__(self, username, password, link='http://localhost:8080/requests/status.xml'):
         self.session = requests.Session()
         self.session.auth = (username, password)
